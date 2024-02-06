@@ -1,0 +1,59 @@
+{
+	"Credential": "cf",
+	"Template": {
+		"Id": "@ext-mdkvsc-npm-dev/generator-mdk",
+		"Name": "Base",
+		"Version": "0.0.1"
+	},
+	"CF": {
+		"Target": "https://api.cf.us10-001.hana.ondemand.com",
+		"Organization": "f4ecd5d9-a3ea-429f-8390-5dd7f31c97e0",
+		"Space": "208fc35f-7b1e-45c2-9680-1d6e5ee91a57",
+		"Deploy": {
+			"Description": "",
+			"WebClient": {
+				"Runtime": "production",
+				"URL": "https://mdk-webclient-runtime.cfapps.us10.hana.ondemand.com/runtime/"
+			},
+			"Destination": [
+				{
+					"CF": "SampleServiceV4",
+					"MDK": "SampleServiceV4",
+					"URL": ""
+				}
+			],
+			"Name": "ns.DemoSampleApp",
+			"Version": "1.0.0",
+			"AppRouter": "standalone",
+			"Auth": true,
+			"URL": "https://a2dd581dtrial-dev-nsdemosampleapp-approuter.cfapps.us10-001.hana.ondemand.com/nsDemoSampleApp"
+		}
+	},
+	"MobileService": {
+		"Type": "standard",
+		"AdminAPI": "https://mobile-service-cockpit-api.cfapps.us10.hana.ondemand.com/cockpit/v1/org/f4ecd5d9-a3ea-429f-8390-5dd7f31c97e0/space/208fc35f-7b1e-45c2-9680-1d6e5ee91a57",
+		"AppId": "com.sap.mdk.demo",
+		"Destination": [
+			"com.sap.edm.sampleservice.v4",
+			"SampleServiceV4"
+		]
+	},
+	"Onboarding": {
+		"Schema": "sapmobilesvcs",
+		"TimeZone": "UTC",
+		"URL": "sapmobilesvcs://?AppId=com.sap.mdk.demo&ClientId=8ab0f608-d6cb-4f2a-86b2-1eee1505ffd3&ServerUrl=https://a2dd581dtrial-dev-com-sap-mdk-demo.cfapps.us10-001.hana.ondemand.com&SapCloudPlatformEndpoint=https://a2dd581dtrial-dev-com-sap-mdk-demo.cfapps.us10-001.hana.ondemand.com&AuthorizationEndpointUrl=https://a2dd581dtrial-dev-com-sap-mdk-demo.cfapps.us10-001.hana.ondemand.com/oauth2/api/v1/authorize&RedirectUrl=https://a2dd581dtrial-dev-com-sap-mdk-demo.cfapps.us10-001.hana.ondemand.com&TokenUrl=https://a2dd581dtrial-dev-com-sap-mdk-demo.cfapps.us10-001.hana.ondemand.com/oauth2/api/v1/token&multiUser=false"
+	},
+	"LCAP": {
+		"FullName": "",
+		"Service": [],
+		"sourceTemplate": {
+			"id": "html5moduletemplates.basicSAPUI5ApplicationProjectModule",
+			"version": "1.40.12"
+		}
+	},
+	"Build": {
+		"SourceMap": false,
+		"TSTarget": "es6",
+		"WMF": true
+	}
+}
