@@ -35,7 +35,10 @@ let demosampleapp_actions_closemodalpage_complete_action = __webpack_require__(/
 let demosampleapp_actions_closepage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/ClosePage.action */ "./build.definitions/DemoSampleApp/Actions/ClosePage.action")
 let demosampleapp_actions_createcustomerentityfailuremessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/CreateCustomerEntityFailureMessage.action */ "./build.definitions/DemoSampleApp/Actions/CreateCustomerEntityFailureMessage.action")
 let demosampleapp_actions_customers_createentity_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Customers_CreateEntity.action */ "./build.definitions/DemoSampleApp/Actions/Customers_CreateEntity.action")
+let demosampleapp_actions_customers_deleteconfirmation_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Customers_DeleteConfirmation.action */ "./build.definitions/DemoSampleApp/Actions/Customers_DeleteConfirmation.action")
+let demosampleapp_actions_customers_deleteentity_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Customers_DeleteEntity.action */ "./build.definitions/DemoSampleApp/Actions/Customers_DeleteEntity.action")
 let demosampleapp_actions_customers_updateentity_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Customers_UpdateEntity.action */ "./build.definitions/DemoSampleApp/Actions/Customers_UpdateEntity.action")
+let demosampleapp_actions_deletecustomerentityfailuremessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/DeleteCustomerEntityFailureMessage.action */ "./build.definitions/DemoSampleApp/Actions/DeleteCustomerEntityFailureMessage.action")
 let demosampleapp_actions_errorarchive_errorarchive_syncfailure_action = __webpack_require__(/*! ./DemoSampleApp/Actions/ErrorArchive/ErrorArchive_SyncFailure.action */ "./build.definitions/DemoSampleApp/Actions/ErrorArchive/ErrorArchive_SyncFailure.action")
 let demosampleapp_actions_errorarchive_navtoerrorarchive_detail_action = __webpack_require__(/*! ./DemoSampleApp/Actions/ErrorArchive/NavToErrorArchive_Detail.action */ "./build.definitions/DemoSampleApp/Actions/ErrorArchive/NavToErrorArchive_Detail.action")
 let demosampleapp_actions_errorarchive_navtoerrorarchive_list_action = __webpack_require__(/*! ./DemoSampleApp/Actions/ErrorArchive/NavToErrorArchive_List.action */ "./build.definitions/DemoSampleApp/Actions/ErrorArchive/NavToErrorArchive_List.action")
@@ -87,6 +90,7 @@ let demosampleapp_rules_application_getclientsupportversions_js = __webpack_requ
 let demosampleapp_rules_application_getclientversion_js = __webpack_require__(/*! ./DemoSampleApp/Rules/Application/GetClientVersion.js */ "./build.definitions/DemoSampleApp/Rules/Application/GetClientVersion.js")
 let demosampleapp_rules_application_onwillupdate_js = __webpack_require__(/*! ./DemoSampleApp/Rules/Application/OnWillUpdate.js */ "./build.definitions/DemoSampleApp/Rules/Application/OnWillUpdate.js")
 let demosampleapp_rules_application_resetappsettingsandlogout_js = __webpack_require__(/*! ./DemoSampleApp/Rules/Application/ResetAppSettingsAndLogout.js */ "./build.definitions/DemoSampleApp/Rules/Application/ResetAppSettingsAndLogout.js")
+let demosampleapp_rules_customers_deleteconfirmation_js = __webpack_require__(/*! ./DemoSampleApp/Rules/Customers_DeleteConfirmation.js */ "./build.definitions/DemoSampleApp/Rules/Customers_DeleteConfirmation.js")
 let demosampleapp_rules_emailvalidation_js = __webpack_require__(/*! ./DemoSampleApp/Rules/EmailValidation.js */ "./build.definitions/DemoSampleApp/Rules/EmailValidation.js")
 let demosampleapp_rules_errorarchive_errorarchive_checkforsyncerror_js = __webpack_require__(/*! ./DemoSampleApp/Rules/ErrorArchive/ErrorArchive_CheckForSyncError.js */ "./build.definitions/DemoSampleApp/Rules/ErrorArchive/ErrorArchive_CheckForSyncError.js")
 let demosampleapp_rules_logging_loglevels_js = __webpack_require__(/*! ./DemoSampleApp/Rules/Logging/LogLevels.js */ "./build.definitions/DemoSampleApp/Rules/Logging/LogLevels.js")
@@ -122,7 +126,10 @@ module.exports = {
 	demosampleapp_actions_closepage_action : demosampleapp_actions_closepage_action,
 	demosampleapp_actions_createcustomerentityfailuremessage_action : demosampleapp_actions_createcustomerentityfailuremessage_action,
 	demosampleapp_actions_customers_createentity_action : demosampleapp_actions_customers_createentity_action,
+	demosampleapp_actions_customers_deleteconfirmation_action : demosampleapp_actions_customers_deleteconfirmation_action,
+	demosampleapp_actions_customers_deleteentity_action : demosampleapp_actions_customers_deleteentity_action,
 	demosampleapp_actions_customers_updateentity_action : demosampleapp_actions_customers_updateentity_action,
+	demosampleapp_actions_deletecustomerentityfailuremessage_action : demosampleapp_actions_deletecustomerentityfailuremessage_action,
 	demosampleapp_actions_errorarchive_errorarchive_syncfailure_action : demosampleapp_actions_errorarchive_errorarchive_syncfailure_action,
 	demosampleapp_actions_errorarchive_navtoerrorarchive_detail_action : demosampleapp_actions_errorarchive_navtoerrorarchive_detail_action,
 	demosampleapp_actions_errorarchive_navtoerrorarchive_list_action : demosampleapp_actions_errorarchive_navtoerrorarchive_list_action,
@@ -174,6 +181,7 @@ module.exports = {
 	demosampleapp_rules_application_getclientversion_js : demosampleapp_rules_application_getclientversion_js,
 	demosampleapp_rules_application_onwillupdate_js : demosampleapp_rules_application_onwillupdate_js,
 	demosampleapp_rules_application_resetappsettingsandlogout_js : demosampleapp_rules_application_resetappsettingsandlogout_js,
+	demosampleapp_rules_customers_deleteconfirmation_js : demosampleapp_rules_customers_deleteconfirmation_js,
 	demosampleapp_rules_emailvalidation_js : demosampleapp_rules_emailvalidation_js,
 	demosampleapp_rules_errorarchive_errorarchive_checkforsyncerror_js : demosampleapp_rules_errorarchive_errorarchive_checkforsyncerror_js,
 	demosampleapp_rules_logging_loglevels_js : demosampleapp_rules_logging_loglevels_js,
@@ -456,6 +464,33 @@ function ResetAppSettingsAndLogout(clientAPI) {
     // Logout 
     return clientAPI.getPageProxy().executeAction('/DemoSampleApp/Actions/Application/Reset.action');
   }
+}
+
+/***/ }),
+
+/***/ "./build.definitions/DemoSampleApp/Rules/Customers_DeleteConfirmation.js":
+/*!*******************************************************************************!*\
+  !*** ./build.definitions/DemoSampleApp/Rules/Customers_DeleteConfirmation.js ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Customers_DeleteConfirmation)
+/* harmony export */ });
+/**
+ * Describe this function...
+ * @param {IClientAPI} clientAPI
+ */
+function Customers_DeleteConfirmation(clientAPI) {
+  return clientAPI.executeAction('/DemoSampleApp/Actions/Customers_DeleteConfirmation.action').then(result => {
+    if (result.data) {
+      return clientAPI.executeAction('/DemoSampleApp/Actions/Customers_DeleteEntity.action').then(success => Promise.resolve(success), failure => Promise.reject('Delete entity failed ' + failure));
+    } else {
+      return Promise.reject('User Deferred');
+    }
+  });
 }
 
 /***/ }),
@@ -1166,6 +1201,26 @@ module.exports = {"_Type":"Action.Type.ODataService.CreateEntity","ActionResult"
 
 /***/ }),
 
+/***/ "./build.definitions/DemoSampleApp/Actions/Customers_DeleteConfirmation.action":
+/*!*************************************************************************************!*\
+  !*** ./build.definitions/DemoSampleApp/Actions/Customers_DeleteConfirmation.action ***!
+  \*************************************************************************************/
+/***/ ((module) => {
+
+module.exports = {"_Type":"Action.Type.Message","ActionResult":{"_Name":"Customers_DeleteConfirmation"},"Message":"Delete current entity?","Title":"Delete Confirmation","OKCaption":"OK","CancelCaption":"Cancel"}
+
+/***/ }),
+
+/***/ "./build.definitions/DemoSampleApp/Actions/Customers_DeleteEntity.action":
+/*!*******************************************************************************!*\
+  !*** ./build.definitions/DemoSampleApp/Actions/Customers_DeleteEntity.action ***!
+  \*******************************************************************************/
+/***/ ((module) => {
+
+module.exports = {"_Type":"Action.Type.ODataService.DeleteEntity","ActionResult":{"_Name":"Customers_DeleteEntity"},"OnFailure":"/DemoSampleApp/Actions/DeleteCustomerEntityFailureMessage.action","OnSuccess":"/DemoSampleApp/Actions/CloseModalPage_Complete.action","Target":{"Service":"/DemoSampleApp/Services/SampleServiceV4.service","EntitySet":"Customers","ReadLink":"{@odata.readLink}"}}
+
+/***/ }),
+
 /***/ "./build.definitions/DemoSampleApp/Actions/Customers_UpdateEntity.action":
 /*!*******************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/Customers_UpdateEntity.action ***!
@@ -1173,6 +1228,16 @@ module.exports = {"_Type":"Action.Type.ODataService.CreateEntity","ActionResult"
 /***/ ((module) => {
 
 module.exports = {"_Type":"Action.Type.ODataService.UpdateEntity","ActionResult":{"_Name":"Customers_UpdateEntity"},"OnFailure":"/DemoSampleApp/Actions/UpdateCustomerEntityFailureMessage.action","OnSuccess":"/DemoSampleApp/Actions/CloseModalPage_Complete.action","ValidationRule":"/DemoSampleApp/Rules/EmailValidation.js","Target":{"Service":"/DemoSampleApp/Services/SampleServiceV4.service","EntitySet":"Customers","ReadLink":"{@odata.readLink}"},"Properties":{"EmailAddress":"#Control:FCEmail/#Value","FirstName":"#Control:FCFirstName/#Value","LastName":"#Control:FCLastName/#Value","PhoneNumber":"#Control:FCPhone/#Value"}}
+
+/***/ }),
+
+/***/ "./build.definitions/DemoSampleApp/Actions/DeleteCustomerEntityFailureMessage.action":
+/*!*******************************************************************************************!*\
+  !*** ./build.definitions/DemoSampleApp/Actions/DeleteCustomerEntityFailureMessage.action ***!
+  \*******************************************************************************************/
+/***/ ((module) => {
+
+module.exports = {"_Type":"Action.Type.Message","ActionResult":{"_Name":"DeleteCustomerEntityFailureMessage"},"Message":"Delete entity failure - {#ActionResults:Customers_DeleteEntity/error}","Title":"Delete Customer","OKCaption":"OK"}
 
 /***/ }),
 
@@ -1552,7 +1617,7 @@ module.exports = {"Controls":[{"_Type":"Control.Type.SectionedTable","_Name":"Se
   \*********************************************************************/
 /***/ ((module) => {
 
-module.exports = {"Controls":[{"_Type":"Control.Type.SectionedTable","_Name":"SectionedTable0","Sections":[{"_Type":"Section.Type.ObjectHeader","_Name":"SectionObjectHeader0","ObjectHeader":{"Subhead":"{FirstName}","Footnote":"{EmailAddress}","Description":"{CustomerID}","StatusText":"{PhoneNumber}","DetailImage":"sap-icon://customer","DetailImageIsCircular":false,"BodyText":"{DateOfBirth}","HeadlineText":"{LastName}","StatusPosition":"Stacked","StatusImagePosition":"Leading","SubstatusImagePosition":"Leading"},"Visible":true},{"_Type":"Section.Type.KeyValue","_Name":"SectionKeyValue0","Visible":true,"EmptySection":{"FooterVisible":false},"Separators":{"TopSectionSeparator":false,"BottomSectionSeparator":true,"HeaderSeparator":true,"FooterSeparator":true,"ControlSeparator":true},"KeyAndValues":[{"Value":"{HouseNumber} {Street}","_Name":"KeyValue0","KeyName":"Address","Visible":true},{"Value":"{City}","_Name":"KeyValue1","KeyName":"City","Visible":true},{"Value":"{PostalCode}","_Name":"KeyValue2","KeyName":"PostalCode","Visible":true},{"Value":"{Country}","_Name":"KeyValue3","KeyName":"Country","Visible":true}],"MaxItemCount":1,"Layout":{"NumberOfColumns":2}}],"FilterFeedbackBar":{"ShowAllFilters":false,"_Type":"Control.Type.FilterFeedbackBar"}}],"_Type":"Page","_Name":"Customers_Detail","Caption":"Details","PrefersLargeCaption":true,"ActionBar":{"Items":[{"_Name":"ActionBarItem0","Caption":"Item","SystemItem":"Edit","Position":"Right","IsIconCircular":false,"Visible":true,"OnPress":"/DemoSampleApp/Actions/NavToCustomers_Edit.action"}],"_Name":"ActionBar1"},"DesignTimeTarget":{"Service":"/DemoSampleApp/Services/SampleServiceV4.service","EntitySet":"Customers"}}
+module.exports = {"Controls":[{"FilterFeedbackBar":{"ShowAllFilters":false,"_Type":"Control.Type.FilterFeedbackBar"},"_Type":"Control.Type.SectionedTable","_Name":"SectionedTable0","Sections":[{"ObjectHeader":{"Subhead":"{FirstName}","Footnote":"{EmailAddress}","Description":"{CustomerID}","StatusText":"{PhoneNumber}","DetailImage":"sap-icon://customer","DetailImageIsCircular":false,"BodyText":"{DateOfBirth}","HeadlineText":"{LastName}","StatusPosition":"Stacked","StatusImagePosition":"Leading","SubstatusImagePosition":"Leading"},"_Type":"Section.Type.ObjectHeader","_Name":"SectionObjectHeader0","Visible":true},{"Separators":{"TopSectionSeparator":false,"BottomSectionSeparator":true,"HeaderSeparator":true,"FooterSeparator":true,"ControlSeparator":true},"KeyAndValues":[{"Value":"{HouseNumber} {Street}","_Name":"KeyValue0","KeyName":"Address","Visible":true},{"Value":"{City}","_Name":"KeyValue1","KeyName":"City","Visible":true},{"Value":"{PostalCode}","_Name":"KeyValue2","KeyName":"PostalCode","Visible":true},{"Value":"{Country}","_Name":"KeyValue3","KeyName":"Country","Visible":true}],"MaxItemCount":1,"_Type":"Section.Type.KeyValue","_Name":"SectionKeyValue0","Visible":true,"EmptySection":{"FooterVisible":false},"Layout":{"NumberOfColumns":2}}]}],"DesignTimeTarget":{"Service":"/DemoSampleApp/Services/SampleServiceV4.service","EntitySet":"Customers"},"_Type":"Page","_Name":"Customers_Detail","Caption":"Details","PrefersLargeCaption":true,"ActionBar":{"Items":[{"_Name":"ActionBarItem0","Caption":"Item","SystemItem":"Edit","Position":"Right","IsIconCircular":false,"Visible":true,"OnPress":"/DemoSampleApp/Actions/NavToCustomers_Edit.action"},{"_Name":"ActionBarItem1","Caption":"Item","SystemItem":"Trash","Position":"Right","IsIconCircular":false,"Visible":true,"OnPress":"/DemoSampleApp/Rules/Customers_DeleteConfirmation.js"}],"_Name":"ActionBar1"}}
 
 /***/ }),
 
