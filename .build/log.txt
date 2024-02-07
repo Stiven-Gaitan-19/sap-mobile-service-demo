@@ -1,2 +1,2 @@
 Pass:
-Generated bundle file /home/user/projects/DemoSampleApp/.build/DemoSampleApp/.build/uploadBundle.zip
+Generated bundle file /home/user/projects/sap-mobile-service-demo/.build/DemoSampleApp/.build/uploadBundle.zip

@@ -1,10 +1,21 @@
 {
 	"Controls": [
 		{
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			},
 			"_Type": "Control.Type.SectionedTable",
 			"_Name": "SectionedTable0",
 			"Sections": [
 				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
 					"_Type": "Section.Type.ObjectTable",
 					"Target": {
 						"Service": "/DemoSampleApp/Services/SampleServiceV4.service",
@@ -17,14 +28,13 @@
 						"Caption": "No Orders Found",
 						"FooterVisible": false
 					},
-					"Separators": {
-						"TopSectionSeparator": false,
-						"BottomSectionSeparator": true,
-						"HeaderSeparator": true,
-						"FooterSeparator": true,
-						"ControlSeparator": true
-					},
 					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [],
+							"PerformFirstActionWithFullSwipe": true,
+							"LeadingItems": [],
+							"TrailingItems": []
+						},
 						"Title": "{SalesOrderID}",
 						"Subhead": "{CustomerID}",
 						"Description": "$(D,{CreatedAt},'','',{format:'medium'})",
@@ -42,13 +52,13 @@
 							"Avatars": [],
 							"ImageIsCircular": true
 						},
-						"Selected": false,
-						"ContextMenu": {
-							"Items": [],
-							"PerformFirstActionWithFullSwipe": true,
-							"LeadingItems": [],
-							"TrailingItems": []
-						}
+						"OnAccessoryButtonPress": {
+							"Name": "/DemoSampleApp/Actions/GenericNavigation.action",
+							"Properties": {
+								"PageToOpen": "/DemoSampleApp/Pages/SalesOrders_Details.page"
+							}
+						},
+						"Selected": false
 					},
 					"Search": {
 						"Enabled": true,
@@ -65,11 +75,7 @@
 						"Mode": "None"
 					}
 				}
-			],
-			"FilterFeedbackBar": {
-				"ShowAllFilters": false,
-				"_Type": "Control.Type.FilterFeedbackBar"
-			}
+			]
 		}
 	],
 	"_Type": "Page",
